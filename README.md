@@ -10,9 +10,9 @@ User Interaction: Creates a library community with a profile-based review system
 4. Proposed SQL Features:
 Recursive CTE: For listing category trees (e.g., Main Category > Subcategory). Advanced Joins & Aggregations: For calculating the most popular books and user statistics. Views: For quickly viewing active penalties and books that need to be refunded today. Constraints: Restrictions for Primary Key, Foreign Key, and data integrity.
 5. Pseudocode
-  1. Analysis of the Most Popular Books
+  1.) Analysis of the Most Popular Books
 Process: Combine the Books table with the Reviews table. Average the ratings each book received and count the number of reviews. Sort by average rating from highest to lowest and show only the top 5 results.
-  2. Hierarchical Categorization
+  2.) Hierarchical Categorization
 Process: Create a self-join loop around the Categories table. Select "Main Categories" (e.g., Science, Art) where the 'parent_id' value is empty. Add subcategories linked to these main categories, building a tree structure at each level. Present all types in the library as a hierarchical list.
-  3. Detection of Overdue Refunds and Penalties
+  3.) Detection of Overdue Refunds and Penalties
 Process: Connect the Users, Loans, and Fines tables. Find the records where the penalty is still "Unpaid". Display which user owes how much for which loan transaction, along with their username.
