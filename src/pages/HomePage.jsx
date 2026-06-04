@@ -21,13 +21,13 @@ function HomePage() {
       {/* Üst Başlık ve Arama Alanı Kapsayıcısı */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', borderBottom: '2px solid #eee', paddingBottom: '15px' }}>
         <h1 style={{ color: '#2c3e50', margin: '0' }}>
-          📚 Kütüphane Kitap Listesi
+          📚 Library Book List
         </h1>
 
         {/* İŞTE YENİ EKLEDİĞİMİZ ARAMA ÇUBUĞU */}
         <input 
           type="text"
-          placeholder="Kitap adı veya yazar ara..."
+          placeholder="Search by book title or author..."
           value={searchQuery}
           // Kullanıcı her harf yazdığında burası tetiklenir ve arama güncellenir
           onChange={(e) => setSearchQuery(e.target.value)}
@@ -62,10 +62,10 @@ function HomePage() {
               }}
             >
               <h2 style={{ fontSize: '1.2rem', margin: '0 0 10px 0', color: '#34495e' }}>{book.title}</h2>
-              <p style={{ margin: '5px 0', fontSize: '0.9rem' }}><strong>Yazar:</strong> {book.author}</p>
-              <p style={{ margin: '5px 0', fontSize: '0.9rem' }}><strong>Kategori:</strong> {book.category.name}</p>
+              <p style={{ margin: '5px 0', fontSize: '0.9rem' }}><strong>Author:</strong> {book.author}</p>
+              <p style={{ margin: '5px 0', fontSize: '0.9rem' }}><strong>Category:</strong> {book.category.name}</p>
               <p style={{ margin: '5px 0', fontSize: '0.9rem', color: '#7f8c8d' }}>
-                <strong>Ödünç Alınma:</strong> {book.borrowCount} kez
+                <strong>Borrowed:</strong> {book.borrowCount} times
               </p>
               
               <Link 
@@ -82,14 +82,14 @@ function HomePage() {
                   fontWeight: 'bold'
                 }}
               >
-                Detayları Gör
+                View Details
               </Link>
             </div>
           ))
         ) : (
           // Eğer aranan kelimeye uygun kitap bulunamadıysa bu uyarı çıkacak
           <div style={{ color: '#bdc3c7', fontSize: '1.2rem', fontStyle: 'italic', marginTop: '20px' }}>
-            Aradığınız kriterlere uygun kitap bulunamadı...
+            No books found matching your criteria...
           </div>
         )}
 

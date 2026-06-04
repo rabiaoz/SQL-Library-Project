@@ -1,36 +1,30 @@
-// src/mockData.js
-
 export const mockBooks = [
   {
     id: 15,
-    title: "Suç ve Ceza",
-    author: "Fyodor Dostoyevski",
-    isbn: "9780140449136",
+    title: "Crime and Punishment",
+    author: "Fyodor Dostoevsky",
+    category: { name: "Novel" },
+    isbn: "978-0140449136",
     borrowCount: 126,
-    available: true,
-    category: {
-      id: 1,
-      name: "Roman"
-    },
     libraries: [
-      {
-        libraryId: 3,
-        libraryName: "Kadıköy İlçe Kütüphanesi",
-        availableCopies: 2
-      },
-      {
-        libraryId: 4,
-        libraryName: "Beşiktaş İlçe Kütüphanesi",
-        availableCopies: 0 // Frontend'de silik görünecek kütüphane
-      }
+      { libraryName: "Kadikoy District Library", availableCopies: 3 },
+      { libraryName: "Besiktas Public Library", availableCopies: 0 },
+      { libraryName: "Uskudar City Library", availableCopies: 5 }
     ],
     reviews: [
       {
-        userId: 5,
-        userName: "Ayşe Kaya",
+        userId: 101,
+        userName: "Ayse Demir",
         rating: 5,
-        comment: "Çok etkileyici bir kitap.",
-        reviewDate: "2026-06-01"
+        comment: "A psychological masterpiece! Absolutely loved the character development.",
+        reviewDate: "2026-05-12"
+      },
+      {
+        userId: 102,
+        userName: "Mehmet Kaya",
+        rating: 4,
+        comment: "Very deep, but a bit slow in the middle chapters.",
+        reviewDate: "2026-04-20"
       }
     ]
   },
@@ -38,30 +32,24 @@ export const mockBooks = [
     id: 16,
     title: "1984",
     author: "George Orwell",
-    isbn: "9780141036144",
+    category: { name: "Science Fiction" },
+    isbn: "978-0451524935",
     borrowCount: 340,
-    available: true,
-    category: {
-      id: 2,
-      name: "Bilim Kurgu"
-    },
     libraries: [
-      {
-        libraryId: 3,
-        libraryName: "Kadıköy İlçe Kütüphanesi",
-        availableCopies: 5
-      }
+      { libraryName: "Kadikoy District Library", availableCopies: 0 },
+      { libraryName: "Besiktas Public Library", availableCopies: 2 }
     ],
     reviews: []
   }
 ];
 
 export const mockUserProfile = {
-  id: 7,
-  fullName: "Ali Yılmaz",
+  id: 1,
+  fullName: "Ali Yilmaz",
   email: "ali@gmail.com",
-  points: 45,
+  points: 25,
   activeLoanCount: 2,
-  completedLoanCount: 9,
-  reviewsCount: 4
+  completedLoanCount: 12,
+  reviewsCount: 4,
+  role: "USER"
 };

@@ -29,12 +29,12 @@ function Navbar() {
     }}>
       {/* Sol Taraf: Logo / Proje Adı */}
       <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '1.3rem', fontWeight: 'bold' }}>
-        📚 Kütüphane Otomasyonu
+        📚 Library Management System
       </Link>
 
       {/* Sağ Taraf: Kullanıcı Durumuna Göre Değişen Menü */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-        <Link to="/" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 'bold' }}>Ana Sayfa</Link>
+        <Link to="/" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 'bold' }}>Home</Link>
         
         {user ? (
           // EĞER KULLANICI GİRİŞ YAPMIŞSA BURASI GÖRÜNECEK
@@ -52,7 +52,7 @@ function Navbar() {
                 textDecoration: 'none'
               }}
             >
-              ⭐ {user.fullName} ({user.points} Puan)
+              ⭐ {user.fullName} ({user.points} Points)
             </Link>
             
             <button 
@@ -67,7 +67,7 @@ function Navbar() {
                 fontWeight: 'bold'
               }}
             >
-              Çıkış Yap
+              Logout
             </button>
           </>
         ) : (
@@ -83,7 +83,7 @@ function Navbar() {
               fontWeight: 'bold'
             }}
           >
-            Giriş Yap
+            Login
           </Link>
         )}
       </div>
