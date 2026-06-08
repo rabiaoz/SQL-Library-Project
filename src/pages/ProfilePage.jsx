@@ -19,12 +19,11 @@ function ProfilePage() {
       returnDate: "2026-05-25",
       status: "RETURNED"
     },
-    // TEST KİTABI: Teslim tarihi çoktan geçmiş (Late Return Testi için)
     {
       id: 33,
       bookTitle: "Les Misérables",
       borrowDate: "2026-04-01",
-      dueDate: "2026-05-01", // Süresi geçmiş kitap
+      dueDate: "2026-05-01",
       returnDate: null,
       status: "ACTIVE"
     }
@@ -45,7 +44,6 @@ function ProfilePage() {
     );
   };
 
-  // SÖZLEŞME GÜNCELLEMESİ: Gecikme cezası simülasyonlu iade fonksiyonu
   const handleReturnBook = (loanId) => {
     setLoans(prevLoans => 
       prevLoans.map(loan => {
@@ -55,7 +53,6 @@ function ProfilePage() {
           const dueDate = new Date(loan.dueDate);
 
           let penaltyNotice = "";
-          // Eğer bugün, son teslim tarihinden büyükse ceza kes
           if (today > dueDate) {
             penaltyNotice = "\n\n⚠️ LATE RETURN PENALTY: You returned this book past its due date. -1 Point penalty applied!";
           }

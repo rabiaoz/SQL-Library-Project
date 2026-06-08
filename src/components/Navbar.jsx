@@ -1,19 +1,16 @@
-// src/components/Navbar.jsx
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Navbar() {
   const navigate = useNavigate();
   
-  // Tarayıcı hafızasından giriş yapmış kullanıcıyı kontrol ediyoruz
   const loggedInUser = localStorage.getItem('user');
   const user = loggedInUser ? JSON.parse(loggedInUser) : null;
 
-  // Çıkış yap butonuna basıldığında çalışacak fonksiyon
   const handleLogout = () => {
-    localStorage.removeItem('token'); // Token'ı sil
-    localStorage.removeItem('user');  // Kullanıcıyı sil
-    navigate('/login');               // Login sayfasına yönlendir
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    navigate('/login');
   };
 
   return (
@@ -27,19 +24,15 @@ function Navbar() {
       fontFamily: 'sans-serif',
       boxShadow: '0 2px 5px rgba(0,0,0,0.2)'
     }}>
-      {/* Sol Taraf: Logo / Proje Adı */}
       <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '1.3rem', fontWeight: 'bold' }}>
         📚 Library Management System
       </Link>
 
-      {/* Sağ Taraf: Kullanıcı Durumuna Göre Değişen Menü */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
         <Link to="/" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 'bold' }}>Home</Link>
         
         {user ? (
-          // EĞER KULLANICI GİRİŞ YAPMIŞSA BURASI GÖRÜNECEK
           <>
-            {/* İşte 3. adımdaki profil linkinin eksiksiz ve kapatılmış hali: */}
             <Link 
               to="/profile" 
               style={{ 
@@ -71,7 +64,6 @@ function Navbar() {
             </button>
           </>
         ) : (
-          // EĞER KULLANICI GİRİŞ YAPMAMIŞSA BURASI GÖRÜNECEK
           <Link 
             to="/login" 
             style={{ 

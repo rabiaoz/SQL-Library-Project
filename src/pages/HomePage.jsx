@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 import { mockBooks } from '../mockData';
 
 function HomePage() {
-  // Kullanıcının arama çubuğuna yazdığı metni hafızada tutacak state
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Arama filtresi: Kitap adında veya yazar adında kullanıcının yazdığı harfler geçiyor mu?
   const filteredBooks = mockBooks.filter((book) => {
     const query = searchQuery.toLowerCase();
     return (
@@ -18,18 +16,17 @@ function HomePage() {
   return (
     <div style={{ padding: '30px', fontFamily: 'sans-serif', maxWidth: '1200px', margin: '0 auto' }}>
       
-      {/* Üst Başlık ve Arama Alanı Kapsayıcısı */}
+      {}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', borderBottom: '2px solid #eee', paddingBottom: '15px' }}>
         <h1 style={{ color: '#2c3e50', margin: '0' }}>
           📚 Library Book List
         </h1>
 
-        {/* İŞTE YENİ EKLEDİĞİMİZ ARAMA ÇUBUĞU */}
+        {}
         <input 
           type="text"
           placeholder="Search by book title or author..."
           value={searchQuery}
-          // Kullanıcı her harf yazdığında burası tetiklenir ve arama güncellenir
           onChange={(e) => setSearchQuery(e.target.value)}
           style={{
             padding: '12px 20px',
@@ -43,10 +40,10 @@ function HomePage() {
         />
       </div>
       
-      {/* Kitapları listeleyen Grid alanı */}
+      {}
       <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', marginTop: '30px' }}>
         
-        {/* Eğer arama sonucunda kitap bulunduysa listele */}
+        {}
         {filteredBooks.length > 0 ? (
           filteredBooks.map((book) => (
             <div 
@@ -87,7 +84,6 @@ function HomePage() {
             </div>
           ))
         ) : (
-          // Eğer aranan kelimeye uygun kitap bulunamadıysa bu uyarı çıkacak
           <div style={{ color: '#bdc3c7', fontSize: '1.2rem', fontStyle: 'italic', marginTop: '20px' }}>
             No books found matching your criteria...
           </div>

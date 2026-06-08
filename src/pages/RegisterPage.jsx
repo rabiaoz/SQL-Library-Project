@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
 function RegisterPage() {
-  // State definitions for form fields
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -11,9 +10,7 @@ function RegisterPage() {
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
-    e.preventDefault(); // Prevent page reload
-
-    // Simulating the Register Request structure expected by the backend
+    e.preventDefault(); 
     const registerPayload = {
       fullName: fullName,
       email: email,
@@ -22,7 +19,6 @@ function RegisterPage() {
 
     console.log("Registration data to be sent to backend:", registerPayload);
 
-    // Show success message and redirect to Login page
     setMessage('Account created successfully! Redirecting to login page...');
     
     setTimeout(() => {
@@ -35,7 +31,7 @@ function RegisterPage() {
       <div style={{ backgroundColor: '#fff', color: '#333', padding: '40px', borderRadius: '10px', width: '350px', boxShadow: '0 8px 16px rgba(0,0,0,0.2)' }}>
         <h2 style={{ textAlign: 'center', color: '#2c3e50', marginBottom: '20px' }}>📝 Sign Up</h2>
 
-        {/* Show green box if there is a success message */}
+        {}
         {message && (
           <div style={{ backgroundColor: '#e8f8f5', color: '#27ae60', padding: '10px', borderRadius: '5px', marginBottom: '15px', fontSize: '0.9rem', textAlign: 'center', fontWeight: 'bold' }}>
             {message}

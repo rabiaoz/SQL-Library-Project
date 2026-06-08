@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { mockBooks, mockUserProfile } from '../mockData'; // mockUserProfile içe aktarıldı
+import { mockBooks, mockUserProfile } from '../mockData';
 
 function BookDetailPage() {
   const { id } = useParams(); 
@@ -11,7 +11,6 @@ function BookDetailPage() {
 
   const loggedInUser = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 
-  // Sözleşme Simülasyonu: Kullanıcı sadece iade ettiği kitaplara yorum yapabilir
   const mockUserLoans = [
     { bookTitle: "Crime and Punishment", status: "ACTIVE" },
     { bookTitle: "1984", status: "RETURNED" }
@@ -30,14 +29,12 @@ function BookDetailPage() {
     );
   }
 
-  // Kitap ödünç alma fonksiyonu
   const handleBorrow = (libraryName) => {
     if (!loggedInUser) {
       alert("Please login to borrow a book!");
       return;
     }
 
-    // SÖZLEŞME KURALI: Maksimum 3 aktif kitap sınırı kontrolü
     if (mockUserProfile.activeLoanCount >= 3) {
       alert("⚠️ Borrow Limit Exceeded!\n\nAccording to library rules, you can have a maximum of 3 active loans at the same time. Please return a book first.");
       return;
