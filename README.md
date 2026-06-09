@@ -79,3 +79,8 @@ FROM Libraries l
 JOIN LibraryBooks lb ON l.library_id = lb.library_id
 JOIN Books b ON lb.book_id = b.book_id
 WHERE b.title = 'Harry Potter';
+```
+
+You can access the project video here:
+https://drive.google.com/drive/folders/1SfUBCloI_PF1QHiJaIFGlKejnRGW6GyE?usp=sharing
+
