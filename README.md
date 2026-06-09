@@ -1,4 +1,13 @@
-# Library Management System
+# MTM4692 Library Management System
+
+Team Members:
+ * Rabia Öztürk
+ * Havvanur Akkaya
+
+You can access the presentation video here:
+https://drive.google.com/drive/folders/1SfUBCloI_PF1QHiJaIFGlKejnRGW6GyE?usp=sharing
+
+---
 
 This project is a relational database system designed to manage multiple library branches in a centralized way.
 
@@ -80,7 +89,4 @@ JOIN LibraryBooks lb ON l.library_id = lb.library_id
 JOIN Books b ON lb.book_id = b.book_id
 WHERE b.title = 'Harry Potter';
 ```
-
-You can access the project video here:
-https://drive.google.com/drive/folders/1SfUBCloI_PF1QHiJaIFGlKejnRGW6GyE?usp=sharing
 
